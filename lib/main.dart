@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/widgets/auth_widgets.dart';
 import 'package:themoviedb/widgets/main_screen/main_screen_widget.dart';
+import 'package:themoviedb/widgets/theme/app_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        appBarTheme:
-            AppBarTheme(backgroundColor: const Color.fromRGBO(3, 37, 65, 1.0)),
-        useMaterial3: true,
-      ),
+          appBarTheme: AppBarTheme(backgroundColor: AppColors.mainDarKBlue),
+          useMaterial3: true,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: AppColors.mainDarKBlue,
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.grey,
+          )),
       routes: {
         '/auth': (context) => AuthWidget(),
         '/main_screen': (context) => MainScreenWidget(),
